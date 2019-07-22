@@ -52,7 +52,7 @@ func main(){
 			panic(err)
 		}
 		fmt.Println("success send"+string(LogData))
-		time.Sleep(2*time.Second)
+		time.Sleep(5*time.Second)
 	}
 
 }
