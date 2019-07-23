@@ -1,0 +1,4 @@
+{"systemname":"IVSYSTEM2","sysmessage":"GET /presentations/logstash-monitorama-2013/images/github-contributions.png HTTP/1.1","systime":"2019-07-23 10:39:12.2760068 +0800 CST m=+20.045273001","level":"Debug"}
+{"systemname":"IVSYSTEM1","sysmessage":"messageError","systime":"2019-07-23 10:40:21.3276348 +0800 CST m=+0.004998801","level":"Error"}
+{"systemname":"IVSYSTEM3","sysmessage":"GET /presentations/logstash-monitorama-2013/images/kibana-dashboard.png HTTP/1.1","systime":"2019-07-23 10:40:26.343428 +0800 CST m=+5.020792001","level":"Debug"}
+{"systemname":"IVSYSTEM1","sysmessage":"messageError","systime":"2019-07-23 10:40:33.8643638 +0800 CST m=+0.006000101","level":"Error"}

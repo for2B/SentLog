@@ -1,0 +1,5 @@
+{"systemname":"IVSYSTEM1","sysmessage":"messageError","systime":"2019-07-23 11:04:10.5600615 +0800 CST m=+0.021992401","level":"Error"}
+{"systemname":"IVSYSTEM1","sysmessage":"GET /presentations/logstash-monitorama-2013/images/github-contributions.png HTTP/1.1","systime":"2019-07-23 11:04:12.5618783 +0800 CST m=+2.023809201","level":"Info"}
+{"systemname":"IVSYSTEM1","sysmessage":"messageError","systime":"2019-07-23 11:04:16.5638367 +0800 CST m=+6.025767601","level":"Warn"}
+{"systemname":"IVSYSTEM1","sysmessage":"messageError","systime":"2019-07-23 11:04:20.5662643 +0800 CST m=+10.028195201","level":"Info"}
+{"systemname":"IVSYSTEM1","sysmessage":"GET /presentations/logstash-monitorama-2013/images/sad-medic.png HTTP/1.1","systime":"2019-07-23 11:04:22.5677398 +0800 CST m=+12.029670701","level":"Error"}

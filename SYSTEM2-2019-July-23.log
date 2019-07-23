@@ -1,0 +1,6 @@
+{"systemname":"IVSYSTEM2","sysmessage":"GET /presentations/logstash-monitorama-2013/images/github-contributions.png HTTP/1.1","systime":"2019-07-23 11:03:53.938246 +0800 CST m=+4.027323501","level":"Debug"}
+{"systemname":"IVSYSTEM2","sysmessage":"GET /presentations/logstash-monitorama-2013/images/sad-medic.png HTTP/1.1","systime":"2019-07-23 11:03:54.9384733 +0800 CST m=+5.027550801","level":"Error"}
+{"systemname":"IVSYSTEM2","sysmessage":"GET /presentations/logstash-monitorama-2013/images/github-contributions.png HTTP/1.1","systime":"2019-07-23 11:04:14.562736 +0800 CST m=+4.024666901","level":"Debug"}
+{"systemname":"IVSYSTEM2","sysmessage":"GET /presentations/logstash-monitorama-2013/images/sad-medic.png HTTP/1.1","systime":"2019-07-23 11:04:15.5629778 +0800 CST m=+5.024908701","level":"Error"}
+{"systemname":"IVSYSTEM2","sysmessage":"GET /presentations/logstash-monitorama-2013/images/kibana-dashboard.png HTTP/1.1","systime":"2019-07-23 11:04:17.5641572 +0800 CST m=+7.026088101","level":"Info"}
+{"systemname":"IVSYSTEM2","sysmessage":"GET /presentations/logstash-monitorama-2013/images/kibana-dashboard.png HTTP/1.1","systime":"2019-07-23 11:04:23.5682581 +0800 CST m=+13.030189001","level":"Debug"}

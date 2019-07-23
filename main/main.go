@@ -19,20 +19,40 @@ type LogMsg struct {
 }
 
 func main(){
-	//conn,err:=net.Dial("tcp", "52.81.54.233:30900")
-	//if err!=nil{
-	//	fmt.Println(err)
-	//	panic("conn fail")
-	//}
+	t:=time.Now()
+	var filename0 =  fmt.Sprintf("./SYSTEM0-%v-%v-%v.log",t.Year(),t.Month().String(),t.Day())
+	var filename1 =  fmt.Sprintf("./SYSTEM1-%v-%v-%v.log",t.Year(),t.Month().String(),t.Day())
+	var filename2 =  fmt.Sprintf("./SYSTEM2-%v-%v-%v.log",t.Year(),t.Month().String(),t.Day())
+	var filename3 =  fmt.Sprintf("./SYSTEM3-%v-%v-%v.log",t.Year(),t.Month().String(),t.Day())
 
-	var filename = "./syslog.log"
-	var f *os.File
+	var f0,f1,f2,f3 *os.File
 	var err error
-	/***************************** 第一种方式: 使用 io.WriteString 写入文件 ***********************************************/
-	if checkFileIsExist(filename) { //如果文件存在
-		f, err = os.OpenFile(filename, os.O_APPEND, 0666) //打开文件
+
+	if checkFileIsExist(filename0) { //如果文件存在
+		f0, err = os.OpenFile(filename0, os.O_APPEND|os.O_RDWR, 0777) //打开文件
 	} else {
-		f, err = os.Create(filename) //创建文件
+		f0, err = os.Create(filename0) //创建文件
+		fmt.Println("文件不存在")
+	}
+
+	if checkFileIsExist(filename1) { //如果文件存在
+		f1, err = os.OpenFile(filename1, os.O_APPEND|os.O_RDWR, 0777) //打开文件
+	} else {
+		f1, err = os.Create(filename1) //创建文件
+		fmt.Println("文件不存在")
+	}
+
+	if checkFileIsExist(filename2) { //如果文件存在
+		f2, err = os.OpenFile(filename2, os.O_APPEND|os.O_RDWR, 0777) //打开文件
+	} else {
+		f2, err = os.Create(filename2) //创建文件
+		fmt.Println("文件不存在")
+	}
+
+	if checkFileIsExist(filename3) { //如果文件存在
+		f3, err = os.OpenFile(filename3, os.O_APPEND|os.O_RDWR, 0777) //打开文件
+	} else {
+		f3, err = os.Create(filename3) //创建文件
 		fmt.Println("文件不存在")
 	}
 
@@ -42,17 +62,45 @@ func main(){
 
 
 	for ;;{
-		LogData := GetLogMsg()
-		//_, err := conn.Write(LogData)
-		_, err := io.WriteString(f, string(LogData)) //写入文件(字符串)
+		randName := rand.Intn(4)
+		randLevel := rand.Intn(4)
+		randMsg := rand.Intn(4)
+		lm:=LogMsg{
+			SystemName:"IVSYSTEM"+strconv.Itoa(randName),
+			Message:message[randMsg],
+			Time:time.Now().String(),
+			Level:level[randLevel],
+		}
+		jsondata,err:=json.Marshal(lm)
+		if err!=nil{
+			panic("marshal fail")
+		}
+		str := string(jsondata)
+		str = str+"\n"
+
+		var f *os.File
+		switch randName {
+		case 0 :
+			f = f0
+		case 1:
+			f = f1
+		case 2:
+			f = f2
+		case 3:
+			f = f3
+		default:
+			f = f0
+		}
+
+		_, err = io.WriteString(f, str) //写入文件(字符串)
 		if err!=nil{
 			panic("write file fail")
 		}
 		if err!=nil{
 			panic(err)
 		}
-		fmt.Println("success send"+string(LogData))
-		time.Sleep(5*time.Second)
+		fmt.Println("success send"+str)
+		time.Sleep(2*time.Second)
 	}
 
 }
